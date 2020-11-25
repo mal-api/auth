@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAnimeList - Login Code</title>
+    <style>
+        .token-text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            display: inline;
+            word-wrap: break-word
+        }
+
+        .token-box {
+            width: 600px;
+            padding: 2px 0;
+            line-height: 1.3
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large
+        }
+
+        .center {
+            text-align: center
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center middle">
+        <h2 class="h2">Copy this text below and paste in the app.</h2>
+        <div class="token-box">
+            <p>
+                <em id="code"
+                    class="token-text"></em>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var url_string = window.location.href
+        var url = new URL(url_string)
+        var code = url.searchParams.get("code")
+        if (code) {
+            document.querySelector("#code").textContent = code
+        } else {
+            document.querySelector("#code").textContent = 'There\'s nothing here...'
+        }
+    </script>
+</body>
+
+</html>

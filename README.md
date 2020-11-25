@@ -1,0 +1,1 @@
+Redirect page for myanimelist auth api. I made this public so you can use it.
