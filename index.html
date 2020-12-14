@@ -59,6 +59,7 @@
         var url = new URL(url_string)
         var code = url.searchParams.get("code")
         if (code) {
+            open(location, '_self').close();
             document.querySelector("#login_indicator").textContent = 'YOU\'RE LOGGED IN!'
             document.querySelector("#login_code").setAttribute("value", code)
             document.querySelector("#copy_code").setAttribute("style", "display: block;")
