@@ -64,7 +64,7 @@
             document.querySelector("#copy_code").setAttribute("style", "display: block;")
             var button = document.getElementById("copy_code");
             button.addEventListener("click", function () {
-                window.close()
+                open(location, '_self').close();
             }, false)
         } else {
             document.querySelector("#login_indicator").textContent = 'Not logged in...'
