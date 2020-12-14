@@ -39,23 +39,24 @@
 
 <body>
     <div class="center middle">
-        <h2 class="h2">Copy this text below and paste in the app.</h2>
-        <div class="token-box">
-            <p>
-                <em id="code"
-                    class="token-text"></em>
-            </p>
-        </div>
+        <h2 class="h2" id="login_indicator">...</h2>
+        <input type="hidden" id="login_code" value="NONE">
+        <button id="copy_code" style="display: none;">COPY CODE</button>
     </div>
 
+    <script src="clipboard.min.js"></script>
     <script>
         var url_string = window.location.href
         var url = new URL(url_string)
         var code = url.searchParams.get("code")
         if (code) {
-            document.querySelector("#code").textContent = code
+            document.querySelector("#login_indicator").textContent = 'YOU\'RE LOGGED IN!'
+            document.querySelector("#login_indicator").setAttribute("value", code)
+            document.querySelector("#copy_code").setAttribute("style", "display: block;")
         } else {
-            document.querySelector("#code").textContent = 'There\'s nothing here...'
+            document.querySelector("#login_indicator").textContent = 'Not logged in...'
+            document.querySelector("#login_indicator").setAttribute("value", "NONE")
+            document.querySelector("#copy_code").setAttribute("style", "display: none;")
         }
     </script>
 </body>
