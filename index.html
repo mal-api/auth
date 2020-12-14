@@ -59,11 +59,11 @@
         var code = url.searchParams.get("code")
         if (code) {
             document.querySelector("#login_indicator").textContent = 'YOU\'RE LOGGED IN!'
-            document.querySelector("#login_indicator").setAttribute("value", code)
+            document.querySelector("#login_code").setAttribute("value", code)
             document.querySelector("#copy_code").setAttribute("style", "display: block;")
         } else {
             document.querySelector("#login_indicator").textContent = 'Not logged in...'
-            document.querySelector("#login_indicator").setAttribute("value", "NONE")
+            document.querySelector("#login_code").setAttribute("value", "NONE")
             document.querySelector("#copy_code").setAttribute("style", "display: none;")
         }
     </script>
