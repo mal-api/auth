@@ -62,10 +62,6 @@
             document.querySelector("#login_indicator").textContent = 'YOU\'RE LOGGED IN!'
             document.querySelector("#login_code").setAttribute("value", code)
             document.querySelector("#copy_code").setAttribute("style", "display: block;")
-            var button = document.getElementById("copy_code");
-            button.addEventListener("click", function () {
-                open(location, '_self').close();
-            }, false)
         } else {
             document.querySelector("#login_indicator").textContent = 'Not logged in...'
             document.querySelector("#login_code").setAttribute("value", "NONE")
