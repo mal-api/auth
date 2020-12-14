@@ -49,11 +49,12 @@
     <div class="center middle">
         <h2 class="h2" id="login_indicator">...</h2>
         <input type="hidden" id="login_code" value="NONE">
-        <center><button id="copy_code" style="display: none;" data-clipboard-action="copy" data-clipboard-target="#login_code">COPY CODE</button></center>
+        <center><button id="copy_code" style="display: none;" data-clipboard-target="#login_code">COPY CODE</button></center>
     </div>
 
     <script src="clipboard.min.js"></script>
     <script>
+        new ClipboardJS('#copy_code');
         var url_string = window.location.href
         var url = new URL(url_string)
         var code = url.searchParams.get("code")
